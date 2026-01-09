@@ -82,8 +82,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const active = JSON.parse(localStorage.getItem('activeProfile'));
 
     if (active && document.getElementById('profileName')) {
-        document.getElementById('profileName').textContent = active.name;
-        document.getElementById('profileId').textContent = active.id;
+    document.getElementById('profileName').textContent = active.name;
+
 
         const sessionList = document.getElementById('sessionList');
         sessionList.innerHTML = '';

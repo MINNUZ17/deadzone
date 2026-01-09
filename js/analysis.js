@@ -102,15 +102,20 @@ if (!activeProfile || !activeProfile.sessions || activeProfile.sessions.length =
         options: {
     responsive: true,
     maintainAspectRatio: false,
-    animation: {
-        duration: 600   // smooth but not slow
-    },
+    cutout: '65%',   // ✅ smaller donut
     plugins: {
         legend: {
-            position: 'bottom'
+            position: 'right',
+            labels: {
+                color: '#c7d2fe',
+                boxWidth: 12,
+                padding: 10
+            }
         }
     }
 }
+
+
 
     });
 }

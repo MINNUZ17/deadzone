@@ -14,23 +14,26 @@
     </div>
 
     <!-- MAIN CONTENT -->
-    <div class="container center">
+    <div class="container center analysis-layout">
 
-        <!-- SUMMARY CARD -->
-        <div class="card" style="max-width:500px;margin:20px auto;">
-            <p><strong>Total Sessions:</strong> <span id="totalSessions">0</span></p>
-            <p><strong>Best Study Time:</strong> <span id="bestSlot">-</span></p>
-            <p><strong>Dead Zone:</strong> <span id="deadSlot">-</span></p>
+        <!-- SUMMARY + BUTTON -->
+        <div class="card analysis-card">
+            <p class="compact-text"><strong>Total Sessions:</strong> <span id="totalSessions">0</span></p>
+            <p class="compact-text"><strong>Best Study Time:</strong> <span id="bestSlot">-</span></p>
+            <p class="compact-text"><strong>Dead Zone:</strong> <span id="deadSlot">-</span></p>
+
+            <a href="ai-advice.html" class="analysis-btn">
+                🤖 Get AI Study Advice
+            </a>
         </div>
 
         <!-- RECOMMENDATION -->
-        <p id="recommendation" class="hint"></p>
+        <p id="recommendation" class="compact-text"></p>
 
-        <!-- BEAUTIFUL BIG DIAGRAM -->
-        <div class="chart-container">
-    <canvas id="slotChart"></canvas>
-</div>
-
+        <!-- CHART -->
+        <div class="chart-container compact-chart">
+            <canvas id="slotChart"></canvas>
+        </div>
 
     </div>
 
