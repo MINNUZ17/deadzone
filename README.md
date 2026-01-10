@@ -101,8 +101,12 @@ https://github.com/MINNUZ17/deadzone/blob/main/DEMO%20video.mp4
 ---
 
 ## 👥 Team
-Project: DeadZone  
-Developed by: [YOUR NAME / TEAM]  
+Project: DeadZone - Academic Productivity Loss Detector
+Developed by: Team ZynX
+              Aiswarya P S
+              Dilsha P P
+              Anjana C
+              Amitha C Agnel
 
 ---
 
