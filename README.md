@@ -71,10 +71,9 @@ https://github.com/MINNUZ17/deadzone/blob/main/sc2.jpeg
 
 add-study session page https://github.com/MINNUZ17/deadzone/blob/main/sc3.jpeg
 
-Analysis Page  
-sc4.jpeg
+Analysis Page https://github.com/MINNUZ17/deadzone/blob/main/sc4.jpeg
 
-AI Study Advisor Page https://github.com/MINNUZ17/deadzone/blob/main/sc4.jpeg
+AI Study Advisor Page  https://github.com/MINNUZ17/deadzone/blob/main/sc5.jpeg
 ---
 
 ## 🎥 Demo Video
