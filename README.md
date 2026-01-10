@@ -66,7 +66,7 @@ DeadZone analyzes study time, focus level, and distractions to give data-driven 
 
 ## 📸 Screenshots
 Home Page  
-sc1.jpeg
+https://github.com/MINNUZ17/deadzone/blob/main/sc1.jpeg
 
 Profile Page
 sc2.jpeg
