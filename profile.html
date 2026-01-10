@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DeadZone | Profile</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="navbar">
+        <h2>Profile</h2>
+        <a href="index.html" class="primary-btn btn-link small-btn">Home</a>
+
+    </div>
+
+    <div class="container">
+
+        <!-- PROFILE INFO -->
+        <div class="card center">
+            <h3 id="profileName"></h3>
+
+            <div class="profile-actions">
+    <a href="add-session.html" class="primary-btn btn-link">Add Study Session</a>
+    <a href="analysis.html" class="primary-btn btn-link">View Analysis</a>
+</div>
+
+
+            <br><br>
+
+            <button id="deleteProfileBtn" class="danger-btn">
+                Delete Profile
+            </button>
+
+            <!-- SOFT MESSAGE -->
+            <p id="deleteMsg" class="success-msg"></p>
+        </div>
+
+        <!-- SESSIONS -->
+        <h3 style="margin-top:30px;">My Study Sessions</h3>
+        <div id="sessionList"></div>
+
+    </div>
+
+    <script src="js/storage.js"></script>
+</body>
+</html>

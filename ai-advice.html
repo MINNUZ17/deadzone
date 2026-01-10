@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DeadZone | AI Study Advisor</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <div class="navbar">
+        <h2>AI Study Advisor</h2>
+        <a href="analysis.html" class="nav-link">Back</a>
+    </div>
+
+    <div class="container">
+
+        <!-- BUTTON (VISIBLE IMMEDIATELY) -->
+        <div class="center" style="margin-bottom:20px;">
+            <button class="primary-btn" id="getAdviceBtn">
+                🤖 Generate AI Study Advice
+            </button>
+        </div>
+
+        <!-- AI CONTENT GRID -->
+        <div class="ai-container">
+
+            <!-- AI ADVICE -->
+            <div class="card">
+                <h3>🤖 Personalized AI Advice</h3>
+                <p id="aiAdvice">Click the button above to generate advice.</p>
+            </div>
+
+            <!-- TIMETABLE -->
+            <div class="card">
+                <h3>📅 Suggested Timetable</h3>
+                <div id="aiTimetable">—</div>
+            </div>
+
+            <!-- TIPS (FULL WIDTH) -->
+            <div class="card" style="grid-column: span 2;">
+                <h3>💡 Focus & Productivity Tips</h3>
+                <div id="aiTips">—</div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- AI LOGIC -->
+    <script src="js/ai-advice.js"></script>
+
+</body>
+</html>

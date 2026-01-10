@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DeadZone | Analysis</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <div class="navbar">
+        <h2>Analysis</h2>
+        <a href="profile.html" class="nav-link">Back</a>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="container center analysis-layout">
+
+        <!-- SUMMARY + BUTTON -->
+        <div class="card analysis-card">
+            <p class="compact-text"><strong>Total Sessions:</strong> <span id="totalSessions">0</span></p>
+            <p class="compact-text"><strong>Best Study Time:</strong> <span id="bestSlot">-</span></p>
+            <p class="compact-text"><strong>Dead Zone:</strong> <span id="deadSlot">-</span></p>
+
+            <!-- ✅ NEW: REAL BUTTON STYLE -->
+            <a href="ai-advice.html" class="primary-btn ai-tips-btn">
+                🤖 Generate AI Tips
+            </a>
+        </div>
+
+        <!-- RECOMMENDATION -->
+        <p id="recommendation" class="compact-text"></p>
+
+        <!-- CHART -->
+        <div class="chart-container compact-chart">
+            <canvas id="slotChart"></canvas>
+        </div>
+
+    </div>
+
+    <!-- CHART LIBRARY -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- ANALYSIS LOGIC -->
+    <script src="js/analysis.js"></script>
+
+</body>
+</html>
