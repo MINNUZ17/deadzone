@@ -1,252 +1,400 @@
-/* ---------- GLOBAL THEME ---------- */
+/* ===========================
+   DEADZONE - NEON THEME CSS
+   FINAL + WINDOW FIT + PROFILE SCROLL + SMALL CARDS + HOVER FIX
+   =========================== */
+
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+/* ---------- BODY BACKGROUND (NEON) ---------- */
 body {
-    margin: 0;
     font-family: 'Segoe UI', Arial, sans-serif;
-    background: radial-gradient(circle at top, #0f172a, #020617);
     color: #e5e7eb;
+    min-height: 100vh;
+
+    background:
+        radial-gradient(circle at 20% 10%, rgba(255, 0, 230, 0.25), transparent 35%),
+        radial-gradient(circle at 80% 30%, rgba(0, 255, 255, 0.20), transparent 40%),
+        radial-gradient(circle at 40% 90%, rgba(90, 0, 255, 0.25), transparent 45%),
+        linear-gradient(180deg, #030712 0%, #020617 100%);
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(
+        120deg,
+        rgba(255,0,230,0.08),
+        rgba(0,255,255,0.06),
+        rgba(110,0,255,0.08)
+    );
+    filter: blur(40px);
+    opacity: 0.7;
+    z-index: -1;
 }
 
 /* ---------- NAVBAR ---------- */
-/* ---------- NAVBAR (COMPACT VERSION) ---------- */
 .navbar {
-    background: linear-gradient(90deg, #0ea5e9, #6366f1, #a855f7);
-    color: white;
-    padding: 8px 18px;            /* ⬅ reduced height */
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    width: 100%;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 0 14px rgba(99,102,241,0.5);
+
+    padding: 12px 18px;
+
+    background: rgba(2, 6, 23, 0.55);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.1);
 }
 
 .navbar h2 {
-    font-size: 18px;              /* ⬅ smaller title */
-    margin: 0;
+    font-size: clamp(16px, 2vw, 22px);
+    font-weight: 900;
+    letter-spacing: 1px;
+    color: #ffffff;
+    text-shadow: 0 0 12px rgba(0,255,255,0.4);
 }
 
+.subtitle {
+    font-size: clamp(11px, 1.2vw, 14px);
+    color: rgba(255,255,255,0.7);
+    letter-spacing: 0.5px;
+}
+
+/* ---------- LINKS ---------- */
 .nav-link {
-    color: white;
     text-decoration: none;
-    font-size: 14px;              /* ⬅ smaller link */
-    font-weight: 500;
+    font-weight: 700;
+    font-size: 14px;
+    color: #ffffff;
+
+    padding: 10px 16px;
+    border-radius: 999px;
+
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.12);
+
+    transition: 0.2s ease;
 }
 
+.nav-link:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 0 15px rgba(0,255,255,0.3);
+}
+
+/* ✅ REMOVE UNDERLINE FROM HOME BUTTON (AND ALL BUTTON-LINKS) */
+a.primary-btn,
+a.nav-link,
+.btn-link {
+    text-decoration: none !important;
+}
 
 /* ---------- CONTAINER ---------- */
 .container {
-    padding: 35px;
-    max-width: 1100px;
+    max-width: 1200px;
     margin: auto;
+    padding: clamp(16px, 4vw, 40px);
 }
 
 .center {
     text-align: center;
 }
 
-/* ---------- HERO TEXT ---------- */
+/* ---------- HERO ---------- */
+h1 {
+    font-size: clamp(28px, 4.5vw, 52px);
+    font-weight: 1000;
+    margin-top: 18px;
+    margin-bottom: 12px;
+    line-height: 1.15;
+
+    background: linear-gradient(90deg, #00e5ff, #a855f7, #ff00e5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    text-shadow: 0 0 25px rgba(0,255,255,0.12);
+}
+
 .hero-text {
-    font-size: 18px;
-    color: #c7d2fe;
+    font-size: clamp(14px, 1.3vw, 18px);
+    max-width: 820px;
+    margin: auto;
+    line-height: 1.6;
+    padding: 0 10px;
+    color: rgba(255,255,255,0.78);
 }
 
-.hero-sub {
-    font-size: 14px;
-    color: #94a3b8;
+.section-title {
+    margin-top: 50px;
+    margin-bottom: 18px;
+    font-size: clamp(16px, 1.7vw, 22px);
+    font-weight: 900;
+    letter-spacing: 1px;
+    color: #dbeafe;
+    text-shadow: 0 0 12px rgba(168,85,247,0.22);
 }
 
-/* ---------- PROFILE BAR ---------- */
+.profile-section {
+    margin-top: 50px;
+}
+
+/* ---------- PROFILE GRID ---------- */
 .profile-bar {
-    display: flex;
+    width: 100%;
+    max-width: 1080px;
+    margin: 0 auto 18px;
+    padding: 0 10px;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
     gap: 14px;
-    flex-wrap: wrap;
-    margin-bottom: 25px;
-    justify-content: center;
 }
 
+/* ---------- PROFILE CARD ---------- */
 .profile-card {
-    background: rgba(255,255,255,0.06);
-    backdrop-filter: blur(8px);
-    padding: 14px 18px;
-    border-radius: 10px;
-    cursor: pointer;
-    min-width: 130px;
+    width: 100%;
+    min-height: 165px;
+    padding: 18px;
+
     text-align: center;
-    border: 1px solid rgba(99,102,241,0.3);
-    transition: 0.3s;
+    border-radius: 22px;
+
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(14px);
+
+    border: 1px solid rgba(255,255,255,0.14);
+    box-shadow:
+        0 0 30px rgba(0,0,0,0.6),
+        0 0 22px rgba(0,255,255,0.08);
+
+    cursor: pointer;
+    transition: 0.25s ease;
 }
 
 .profile-card:hover {
-    box-shadow: 0 0 15px #6366f1;
-    transform: translateY(-3px);
+    transform: translateY(-6px) scale(1.02);
+    border: 1px solid rgba(0,255,255,0.35);
+    box-shadow:
+        0 0 40px rgba(0,255,255,0.15),
+        0 0 60px rgba(255,0,230,0.10);
 }
 
-.profile-card.big {
-    background: linear-gradient(135deg, #0ea5e9, #6366f1);
+.profile-card strong {
+    display: block;
+    font-size: clamp(16px, 1.3vw, 19px);
+    margin-top: 8px;
+    font-weight: 1000;
     color: white;
-    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.profile-card small {
+    display: block;
+    margin-top: 6px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.65);
+}
+
+/* ---------- AVATAR ---------- */
+.avatar {
+    width: 76px;
+    height: 76px;
+    margin: 0 auto 10px;
+    border-radius: 50%;
+    overflow: hidden;
+
+    border: 3px solid rgba(0,255,255,0.7);
+    box-shadow:
+        0 0 14px rgba(0,255,255,0.5),
+        0 0 24px rgba(255,0,230,0.15);
+}
+
+.avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 /* ---------- BUTTONS ---------- */
 .primary-btn {
-    background: linear-gradient(90deg, #22d3ee, #6366f1);
-    color: #020617;
-    padding: 12px 18px;
+    padding: 14px 22px;
+    border-radius: 999px;
     border: none;
-    border-radius: 8px;
     cursor: pointer;
-    font-weight: bold;
-    box-shadow: 0 0 15px rgba(34,211,238,0.6);
+
+    font-weight: 1000;
+    font-size: 14px;
+    letter-spacing: 1px;
+
+    color: #020617;
+    background: linear-gradient(90deg, #00e5ff, #a855f7, #ff00e5);
+
+    box-shadow:
+        0 0 18px rgba(0,255,255,0.25),
+        0 0 35px rgba(255,0,230,0.15);
+
+    transition: 0.25s ease;
+}
+
+.primary-btn:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow:
+        0 0 25px rgba(0,255,255,0.30),
+        0 0 55px rgba(168,85,247,0.25);
 }
 
 .secondary-btn {
-    background: rgba(255,255,255,0.1);
-    color: #e5e7eb;
-    padding: 12px 18px;
-    border-radius: 8px;
-    text-decoration: none;
-    border: 1px solid rgba(255,255,255,0.2);
+    padding: 12px 20px;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,0.18);
+    cursor: pointer;
+
+    background: rgba(255,255,255,0.06);
+    color: white;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    transition: 0.25s ease;
+}
+
+.secondary-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 18px rgba(255,255,255,0.12);
 }
 
 .danger-btn {
-    background: linear-gradient(90deg, #f43f5e, #ef4444);
-    color: white;
     padding: 12px 18px;
+    border-radius: 999px;
     border: none;
-    border-radius: 8px;
     cursor: pointer;
-    box-shadow: 0 0 15px rgba(239,68,68,0.6);
+
+    font-weight: 1000;
+    letter-spacing: 0.5px;
+
+    background: linear-gradient(90deg, #fb7185, #ef4444);
+    color: white;
+    box-shadow: 0 0 18px rgba(239,68,68,0.30);
 }
 
-.action-box a {
-    margin: 10px;
-    display: inline-block;
+.danger-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 25px rgba(239,68,68,0.40);
+}
+
+/* Create student button bar */
+#openModalBtn {
+    width: 100%;
+    max-width: 650px;
+    margin: 12px auto 0;
+    padding: 12px 18px;
+    font-size: 14px;
+    letter-spacing: 0.5px;
 }
 
 /* ---------- CARDS ---------- */
 .card {
-    background: rgba(255,255,255,0.06);
-    backdrop-filter: blur(10px);
-    padding: 25px;
-    border-radius: 14px;
-    width: 360px;
-    max-width: 100%;
-    margin: 25px auto;
-    border: 1px solid rgba(99,102,241,0.25);
-    box-shadow: 0 0 25px rgba(99,102,241,0.2);
+    width: 460px;
+    max-width: 92vw;
+    margin: 28px auto;
+    padding: 28px;
+    border-radius: 26px;
+
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255,255,255,0.14);
+
+    box-shadow:
+        0 0 40px rgba(0,0,0,0.6),
+        0 0 25px rgba(168,85,247,0.12);
 }
 
-/* ---------- FORM ---------- */
-input,
-select {
+/* ---------- INPUTS ---------- */
+input, select {
     width: 100%;
-    margin: 8px 0 16px;
-    padding: 10px;
-    background: rgba(255,255,255,0.08);
-    border: 1px solid rgba(255,255,255,0.2);
-    border-radius: 6px;
+    padding: 12px;
+    margin: 10px 0 18px;
+
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,0.18);
+
+    background: rgba(2,6,23,0.55);
     color: white;
+
+    backdrop-filter: blur(12px);
+    transition: 0.25s ease;
 }
 
-input:focus,
-select:focus {
+input:focus, select:focus {
     outline: none;
-    border-color: #22d3ee;
-    box-shadow: 0 0 10px #22d3ee;
+    border-color: rgba(0,255,255,0.7);
+    box-shadow: 0 0 16px rgba(0,255,255,0.25);
 }
 
 /* ---------- SESSION LIST ---------- */
 .session-item {
-    background: rgba(255,255,255,0.05);
-    padding: 14px;
-    border-radius: 10px;
+    padding: 16px;
+    border-radius: 18px;
     margin-bottom: 12px;
-    border-left: 4px solid #6366f1;
+
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.10);
+
+    box-shadow: 0 0 18px rgba(0,0,0,0.35);
 }
 
-/* ---------- MESSAGES ---------- */
 .success-msg {
+    margin-top: 12px;
+    font-weight: 900;
     color: #22c55e;
+    text-shadow: 0 0 10px rgba(34,197,94,0.25);
 }
 
 /* ---------- MODAL ---------- */
 .modal {
     position: fixed;
     inset: 0;
-    background: rgba(2,6,23,0.85);
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+
+    background: rgba(0,0,0,0.75);
+    backdrop-filter: blur(10px);
+    z-index: 999;
 }
 
 .modal-content {
-    background: rgba(255,255,255,0.08);
-    backdrop-filter: blur(10px);
-    padding: 25px;
-    border-radius: 14px;
+    width: 390px;
+    max-width: 92vw;
+    padding: 28px;
+
+    border-radius: 26px;
     text-align: center;
-    width: 90%;
-    max-width: 360px;
-    border: 1px solid rgba(99,102,241,0.3);
+
+    background: rgba(2,6,23,0.75);
+    border: 1px solid rgba(255,255,255,0.16);
+
+    box-shadow:
+        0 0 45px rgba(0,255,255,0.12),
+        0 0 85px rgba(255,0,230,0.08);
 }
 
-.hidden {
-    display: none;
-}
+.hidden { display: none; }
 
-/* ---------- SECTION ---------- */
-.section-title {
-    margin-top: 40px;
-    margin-bottom: 18px;
-    color: #e0e7ff;
-}
-
-.spaced {
-    margin-top: 10px;
-}
-
-.spaced-btn {
-    margin-top: 22px;
-}
-
-/* ---------- PROFILE SECTION ---------- */
-.profile-section {
-    margin-top: 90px;
-}
-
-/* ---------- CHART CONTAINER ---------- */
-.chart-container {
-    position: relative;
-    width: 100%;
-    max-width: 650px;
-    margin: 40px auto;
-}
-
-/* ---------- RESPONSIVE ---------- */
-@media (max-width: 768px) {
-
-    .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-    }
-
-    .container {
-        padding: 22px 16px;
-    }
-
-    .profile-card {
-        width: 100%;
-        max-width: 260px;
-    }
-
-    .card {
-        width: 100%;
-    }
-}
-/* ---------- PROFILE ACTION BUTTON FIX ---------- */
+/* ---------- PROFILE ACTION BUTTONS ---------- */
 .profile-actions {
     display: flex;
     justify-content: center;
@@ -258,186 +406,26 @@ select:focus {
 .profile-actions a {
     min-width: 160px;
     text-align: center;
-}
-
-/* Mobile stacking */
-@media (max-width: 480px) {
-    .profile-actions {
-        flex-direction: column;
-        gap: 12px;
-    }
-}
-/* ---------- REMOVE LINK UNDERLINES ---------- */
-.btn-link {
-    text-decoration: none;
     display: inline-block;
 }
-/* ---------- HOME BUTTON (NAVBAR) ---------- */
-.home-btn {
-    background: rgba(255,255,255,0.15);
-    color: white;
-    padding: 6px 14px;
-    border-radius: 20px;
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 500;
-    border: 1px solid rgba(255,255,255,0.3);
-    transition: 0.3s ease;
-}
 
-.home-btn:hover {
-    background: white;
-    color: #4f46e5;
-    box-shadow: 0 0 12px rgba(255,255,255,0.6);
-}
-/* ---------- SMALL NAV BUTTON ---------- */
-.small-btn {
-    padding: 8px 16px;
-    font-size: 14px;
-    border-radius: 999px;
-    box-shadow: 0 0 12px rgba(35, 113, 126, 0.5);
-}
-/* ---------- AI BUTTON FIX ---------- */
-.ai-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 14px 26px;
-    border-radius: 999px;
-    background: linear-gradient(90deg, #22d3ee, #6366f1);
-    color: #020617;
-    font-weight: 600;
-    text-decoration: none;   /* removes underline */
-    box-shadow: 0 0 18px rgba(34,211,238,0.6);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.ai-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 0 28px rgba(99,102,241,0.8);
-}
-
-/* ---------- AI PAGE GRID LAYOUT ---------- */
+/* ---------- AI PAGE ---------- */
 .ai-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    gap: 22px;
     align-items: start;
 }
 
-/* Mobile responsiveness */
 @media (max-width: 900px) {
     .ai-container {
         grid-template-columns: 1fr;
     }
 }
-/* ---------- ANALYSIS PAGE RESPONSIVE FIX ---------- */
 
-.analysis-layout {
-    max-height: calc(100vh - 90px);
-    overflow: hidden;
-}
-
-/* Top section */
-.analysis-top {
-    display: flex;
-    justify-content: center;
-}
-
-/* Smaller card */
-.analysis-card {
-    width: 420px;
-    padding: 18px;
-}
-
-/* Smaller AI button */
-.analysis-btn {
-    display: inline-block;
-    margin-top: 12px;
-    padding: 8px 14px;
-    font-size: 14px;
-    border-radius: 20px;
-    text-decoration: none; /* ✅ removes underline */
-    background: linear-gradient(90deg, #22d3ee, #6366f1);
-    color: #020617;
-    font-weight: 600;
-    box-shadow: 0 0 10px rgba(34,211,238,0.5);
-}
-
-/* Compact recommendation */
-.compact-text {
-    margin: 8px 0 10px;
-    font-size: 14px;
-    color: #c7d2fe;
-}
-
-/* Compact chart */
-.compact-chart {
-    max-width: 520px;
-    height: 260px;  /* 👈 THIS IS THE KEY FIX */
-    margin: 0 auto;
-}
-
-/* Make canvas fit container */
-.compact-chart canvas {
-    width: 100% !important;
-    height: 100% !important;
-}
-
-/* ---------- RESPONSIVE ---------- */
-@media (max-width: 768px) {
-    .analysis-layout {
-        max-height: unset;
-        overflow: auto;
-    }
-
-    .compact-chart {
-        height: 300px;
-    }
-}
-/* ---------- FINAL ANALYSIS VIEWPORT FIX ---------- */
-
+/* ---------- ANALYSIS PAGE ---------- */
 .analysis-layout {
     height: calc(100vh - 80px);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-/* Chart adapts to window height */
-.compact-chart {
-    flex: 1;
-    max-width: 520px;
-    max-height: 40vh;   /* ✅ THIS IS THE MAGIC */
-    margin: 0 auto;
-}
-
-/* Ensure canvas scales */
-.compact-chart canvas {
-    width: 100% !important;
-    height: 100% !important;
-}
-
-/* Reduce excess spacing */
-.analysis-card {
-    margin-bottom: 8px;
-}
-
-.compact-text {
-    margin: 4px 0;
-    font-size: 14px;
-}
-
-/* Small screens */
-@media (max-height: 700px) {
-    .compact-chart {
-        max-height: 35vh;
-    }
-}
-/* ---------- ANALYSIS PAGE FINAL FIX ---------- */
-
-.analysis-layout {
-    height: calc(100vh - 70px);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -446,16 +434,16 @@ select:focus {
 
 .analysis-card {
     width: 100%;
-    max-width: 420px;
-    padding: 16px;
+    max-width: 460px;
+    padding: 18px;
 }
 
 .compact-text {
     font-size: 14px;
-    margin: 4px 0;
+    margin: 6px 0;
+    color: rgba(255,255,255,0.75);
 }
 
-/* Chart size control (NO SCROLL) */
 .compact-chart {
     width: 100%;
     max-width: 520px;
@@ -467,23 +455,156 @@ select:focus {
     height: 100% !important;
 }
 
-/* AI Button */
-.analysis-btn {
-    display: inline-block;
-    margin-top: 12px;
-    padding: 10px 18px;
-    font-size: 14px;
-    border-radius: 999px;
-    text-decoration: none;   /* ✅ removes underline */
-    font-weight: 600;
-    background: linear-gradient(90deg, #22d3ee, #6366f1);
-    color: #020617;
-    box-shadow: 0 0 12px rgba(34,211,238,0.5);
+/* ====================================================
+   ✅ HOME PAGE FIX
+   - No page scroll
+   - Only profile section scroll
+   - Smaller cards
+   - Hover/click won't overlap button
+   ==================================================== */
+
+.home-page .container {
+    height: calc(100vh - 70px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding-top: 14px;
+    padding-bottom: 14px;
 }
 
-/* Smaller screens */
-@media (max-height: 700px) {
-    .compact-chart {
-        height: 26vh;
+.home-page h1 {
+    margin-top: 0 !important;
+    margin-bottom: 6px !important;
+    font-size: clamp(22px, 3.2vw, 44px);
+}
+
+.home-page .hero-text {
+    margin-top: 0 !important;
+    margin-bottom: 8px !important;
+    line-height: 1.4;
+}
+
+.home-page .section-title {
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+}
+
+.home-page .profile-section {
+    margin-top: 0 !important;
+}
+
+/* ✅ Scroll only inside profile section */
+.home-page .profile-bar {
+    max-height: 340px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 6px;
+
+    gap: 10px !important;
+    margin-bottom: 35px !important;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+/* ✅ scrollbar style */
+.home-page .profile-bar::-webkit-scrollbar {
+    width: 8px;
+}
+.home-page .profile-bar::-webkit-scrollbar-track {
+    background: rgba(255,255,255,0.06);
+    border-radius: 999px;
+}
+.home-page .profile-bar::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #00e5ff, #ff00e5);
+    border-radius: 999px;
+}
+
+/* ✅ smaller profile cards ONLY in home page */
+.home-page .profile-card {
+    min-height: 115px !important;
+    padding: 12px !important;
+    border-radius: 18px !important;
+}
+
+.home-page .avatar {
+    width: 58px !important;
+    height: 58px !important;
+    margin-bottom: 8px !important;
+    border-width: 2px !important;
+}
+
+.home-page .profile-card strong {
+    font-size: 15px !important;
+    margin-top: 6px !important;
+}
+
+.home-page .profile-card small {
+    font-size: 12px !important;
+    margin-top: 4px !important;
+    opacity: 0.85;
+}
+
+/* ✅ Fix overlap: keep hover small + disable click-lift */
+.home-page .profile-card:hover {
+    transform: translateY(-3px) scale(1.02) !important;
+    position: relative;
+    z-index: 5;
+}
+.home-page .profile-card:active {
+    transform: translateY(0px) scale(1.01) !important;
+}
+.home-page .profile-card:focus,
+.home-page .profile-card:focus-visible {
+    transform: translateY(0px) scale(1.01) !important;
+    outline: none !important;
+}
+
+/* ✅ Make create button ALWAYS on top */
+.home-page #openModalBtn {
+    position: relative;
+    z-index: 20;
+}
+
+/* for small height screens */
+@media (max-height: 800px) {
+    .home-page .profile-bar {
+        max-height: 260px;
     }
+}
+
+/* ---------- MOBILE ---------- */
+@media (max-width: 520px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    #openModalBtn {
+        padding: 12px 16px;
+        font-size: 13px;
+    }
+}
+/* ==========================================
+   ANALYSIS PAGE: FIX AI BUTTON OVERLAP
+   ========================================== */
+
+.analysis-card {
+    padding: 22px !important;         /* more space inside */
+    height: auto !important;           /* allow card to expand */
+}
+
+.analysis-card .ai-tips-btn,
+.analysis-card a.ai-tips-btn,
+.analysis-card a.primary-btn {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+
+    width: 100% !important;            /* fit inside card */
+    max-width: 260px !important;       /* not too big */
+    margin: 14px auto 0 !important;    /* proper spacing */
+
+    padding: 10px 16px !important;     /* smaller height */
+    font-size: 13px !important;        /* smaller text */
+    border-radius: 999px !important;
 }
