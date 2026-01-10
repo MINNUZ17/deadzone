@@ -80,7 +80,7 @@ AI Study Advisor Page https://github.com/MINNUZ17/deadzone/blob/main/sc5.jpeg
 
 ## 🎥 Demo Video
 Working Video Link:  
-[ADD VIDEO LINK HERE]
+https://github.com/MINNUZ17/deadzone/blob/main/DEMO%20video.mp4
 
 ---
 
