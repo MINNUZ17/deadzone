@@ -5,9 +5,7 @@
     <title>DeadZone | Home</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-
-<!-- ✅ IMPORTANT: this class is needed for home-page fit -->
-<body class="home-page">
+<body>
 
     <div class="navbar">
         <h2>DeadZone</h2>
@@ -25,14 +23,15 @@
 
         <!-- PROFILE SECTION -->
         <div class="profile-section">
-            <h3 class="section-title">Select a Student</h3>
+    <h3 class="section-title">Select a Profile</h3>
 
-            <div id="profileBar" class="profile-bar"></div>
+    <div id="profileBar" class="profile-bar"></div>
 
-            <button id="openModalBtn" class="primary-btn">
-                + Create New Student
-            </button>
-        </div>
+    <button id="openModalBtn" class="primary-btn">
+        + Add New Student
+    </button>
+</div>
+
 
     </div>
 
@@ -40,10 +39,7 @@
     <div id="modal" class="modal hidden">
         <div class="modal-content">
             <h3>Create Student Profile</h3>
-
             <input type="text" id="studentName" placeholder="Enter student name">
-            <input type="file" id="studentPhoto" accept="image/*">
-
             <button id="createProfileBtn" class="primary-btn">Create</button>
             <button id="closeModalBtn" class="secondary-btn">Cancel</button>
         </div>
