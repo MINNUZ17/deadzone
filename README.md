@@ -69,8 +69,7 @@ Home Page  https://github.com/MINNUZ17/deadzone/blob/main/sc1.jpeg
 Profile Page
 https://github.com/MINNUZ17/deadzone/blob/main/sc2.jpeg
 
-add-study session page
-sc3.jpeg
+add-study session page https://github.com/MINNUZ17/deadzone/blob/main/sc3.jpeg
 
 Analysis Page  
 sc4.jpeg
