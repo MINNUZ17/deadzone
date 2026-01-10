@@ -66,13 +66,19 @@ DeadZone analyzes study time, focus level, and distractions to give data-driven 
 
 ## 📸 Screenshots
 Home Page  
-[ADD SCREENSHOT]
+sc1.jpeg
+
+Profile Page
+sc2.jpeg
+
+add-study session page
+sc3.jpeg
 
 Analysis Page  
-[ADD SCREENSHOT]
+sc4.jpeg
 
 AI Study Advisor  
-[ADD SCREENSHOT]
+sc5.jpeg
 
 ---
 
